@@ -1,9 +1,10 @@
 module.exports.run = (bot, message, args, discord) => {
+    let cmd = args.join(' ');
     if (!args) {
     message.channel.send("You must provide a command name to reload.")
 } else {
-      delete require.cache[require.resolve(`./${args[0]}.js`)]
-      message.channel.send(`Command ${args[0]} has been reloaded.`)
+      delete require.cache[require.resolve(`./${cmd}.js`)]
+      message.channel.send(`Command ${cmd} has been reloaded.`)
     }
 }
 
