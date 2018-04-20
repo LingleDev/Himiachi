@@ -33,8 +33,4 @@ bot.on('message', message => {
     cmd.run(bot, message, args, discord)
     console.log(`${message.author.username} used the ${message.content.split(" ")[0]} command.`)
   }
-  
-  if (message.content == prefix+"help") {
-    message.channel.send("I'm a fairly new bot, do you really think I have any commands yet?").then(m => m.delete(10000))
-  }
 })
