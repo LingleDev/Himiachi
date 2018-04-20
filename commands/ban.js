@@ -1,6 +1,6 @@
 module.exports.run = (bot, message, args, discord) => {        
     let member = message.mentions.members.first();
-    let reason = args.join(' ');
+    let reason = args[1]
     if (!args) {
         member.ban().then(message.channel.send(`Okay, just banned ${member.displayName}.`))
     } else {
