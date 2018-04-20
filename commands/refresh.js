@@ -6,3 +6,7 @@ module.exports.run = (bot, message, args, discord) => {
       message.channel.send(`Command ${args[0]} has been reloaded.`)
     }
 }
+
+module.exports.help = {
+    name: "reload"
+}
