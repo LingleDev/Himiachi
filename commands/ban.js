@@ -1,4 +1,5 @@
-module.exports.run = (bot, message, args, discord) => {        
+module.exports.run = (bot, message, args, discord) => {   
+    console.log(typeof args)
     let member = message.mentions.members.first();
     let reason = args.join(' ');
     if (!args) {
