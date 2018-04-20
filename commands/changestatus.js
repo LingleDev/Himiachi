@@ -1,5 +1,5 @@
 module.exports.run = (bot, message, args, discord) => {
-  let status = args.join(' ');
+  let status = args
   if (status == "online") {
     let em = new discord.RichEmbed()
     .setTitle("Status Changer")
