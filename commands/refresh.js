@@ -1,5 +1,5 @@
 module.exports.run = (bot, message, args, discord) => {
-    let cmd = args.join(" ");
+    let cmd = args.slice(1).join(" ")
     if (!args) {
     message.channel.send("You must provide a command name to reload.")
 } else {
