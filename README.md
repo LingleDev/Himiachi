@@ -1,2 +1,2 @@
 # Himiachi
-Wolf's bot.
+> Wolf's bot.
