@@ -25,7 +25,7 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
   let mArray = message.content.split(" ")
-  let args = message.content.slice(1)
+  let args = mArray.slice(1)
   let cmd = bot.commands.get(mArray[0].slice(prefix.length))
   if (message.author.bot) return;
   
