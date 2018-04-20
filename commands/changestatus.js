@@ -15,7 +15,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setTitle("Status Changer")
   .setDescription(`Alright, I changed my status to Idle.`)
   .setTimestamp()
-  .setColor("YELLOW")
+  .setColor("GOLD")
   message.channel.send({embed: em})
     bot.user.setStatus("idle")
   }
