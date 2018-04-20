@@ -6,7 +6,6 @@ bot.login(process.env.token);
 
 // ===Loading commands===
 
-console.log("Loading commands...")
 bot.commands = new discord.Collection()
 
 require('fs').readdir("./commands/", (err, files) => {
@@ -27,6 +26,13 @@ bot.on('ready', () => {
 bot.on('message', message => {
   let mArray = message.content.split(" ")
   let args = message.content.slice(1)
+  let cmd = bot.commands.get(mArray[0].slice(prefix.length))
+  if (message.author.bot) return;
+  
+  if (cmd) {
+    cmd.run(bot, message, args, discord)
+    console.log(`${message.author.username} used the ${message.content.split(" ")[0]} command.`)
+  }
   
   if (message.content == prefix+"help") {
     message.channel.send("I'm a fairly new bot, do you really think I have any commands yet?").then(m => m.delete(10000))
