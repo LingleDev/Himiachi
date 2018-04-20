@@ -6,6 +6,7 @@ module.exports.run = (bot, message, args, discord) => {
     .setDescription(`Alright, I changed my status to Online.`)
     .setTimestamp()
     .setColor("GREEN")
+    message.channel.send({embed: em})
     bot.user.setStatus("online")
   }
   
@@ -15,6 +16,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setDescription(`Alright, I changed my status to Idle.`)
   .setTimestamp()
   .setColor("YELLOW")
+  message.channel.send({embed: em})
     bot.user.setStatus("idle")
   }
   
@@ -24,6 +26,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setDescription("Alright, I changed my status to Do not Disturb.")
   .setTimestamp()
   .setColor("RED")
+  message.channel.send({embed: em})
     bot.user.setStatus("dnd")
   }
   
@@ -33,6 +36,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setDescription("Alright, I changed my status to Invisible.")
   .setTimestamp()
   .setColor("GREY")
+  message.channel.send({embed: em})
     bot.user.setStatus("invisible")
   }
 }
