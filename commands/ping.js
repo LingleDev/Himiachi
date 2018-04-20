@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setTimestamp()
   .setFooter(message.author.username)
   .setColor("BLUE")
-  message.channel.send({embed: em})
+  message.channel.send({embed: em}).then(m => m.delete(10000))
 }
 
 module.exports.help = {
