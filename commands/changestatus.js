@@ -25,7 +25,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setTitle("Status Changer")
   .setDescription("Alright, I changed my status to Do not Disturb.")
   .setTimestamp()
-  .setColor("PINK")
+  .setColor("RED")
   message.channel.send({embed: em})
     bot.user.setStatus("dnd")
   }
