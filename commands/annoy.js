@@ -7,7 +7,9 @@ module.exports.run = (bot, message, args, discord) => {
   .setThumbnail(bot.user.avatarURL)
   .setFooter(message.author.username)
   .setTimestamp()
-   bot.users.get(member.id).send(`<@${member.id}> LOL! ${message.author.username} sent me to annoy you! <@${member.id}> <@${member.id}>`)
+   bot.fetchUser(member.id).then(user => {
+    user.send(`<@${user.id}> LOL! ${message.author.username} sent me to annoy you! <@${user.id}> <@${user.id}>`)
+  })
    message.channel.send({embed: em})
 }
 
