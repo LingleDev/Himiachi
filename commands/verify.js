@@ -27,13 +27,6 @@ module.exports.run = (bot, message, args, discord) => {
       message.channel.send({embed: em})
     })
   }
-  if (member.hasRole(role.id)) {
-    em.setTitle(`Himiachi Verification`)
-    em.setDescription(`You already have this role!`)
-    em.setTimestamp()
-    em.setColor("RED")
-    em.setFooter("Verification")
-  }
 }
 
 module.exports.help = {
