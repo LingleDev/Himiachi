@@ -1,5 +1,4 @@
-module.exports.run = (bot, message, args, discord) => {
- let member = message.mentions.members.first();
+module.exports.run = (bot, message, args, discord) => 
  let em = new discord.RichEmbed()
   .setTitle("Himiachi Invite")
   .setDescription(`https://discordapp.com/api/oauth2/authorize?client_id=410101842329075712&permissions=8&scope=bot`)
