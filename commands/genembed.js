@@ -4,6 +4,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setTitle("Embed Generator")
   .setDescription(joinargs)
   .setTimestamp()
+  .setThumbnail(message.author.avatarURL())
   .setColor("PURPLE")
   .setFooter(`${message.author.username}'s generated embed.`)
   message.channel.send({embed: em})
