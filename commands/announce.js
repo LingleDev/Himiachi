@@ -4,7 +4,7 @@ const config = require(`../config.json`);
 
 function sendAnnounce(bot, message, args, guild) {
   var sendChannel = "";
-  if (config.donotAnnounce.includes(guild.id)) return message.channel.send(`ðŸ—³ Faild to send announcement to ${guild.name} (In DNA list)`).then(m => m.delete(20000));
+  if (config.donotAnnounce.includes(guild.id)) return message.channel.send(`${guild.name} has no channel, canceling...`)
   
   if (guild.channels.find("name", "general")) {
     sendChannel = guild.channels.find("name", "general");
@@ -19,8 +19,8 @@ function sendAnnounce(bot, message, args, guild) {
   let announce = new discord.RichEmbed()
     .setColor("7289DA")
     .setAuthor(`${bot.user.username} Announcement`)
-    .setDescription(`**Hello FHGDev here, creator of Hulkbot just wanting you to know, **\n${args.join(' ')}\n\n**This message was sent to *${guild.name}* on purpose from the creator.**\n*This announcement system wil also not be spammed alot.*`)
-    .setFooter(`An official announcement from FHGDev. (FreakingHulk Gaming#6545)`, bot.user.avatarURL)
+    .setDescription(`**Hello there! The creators of Himiachi, (<@276040277293268992> and <@242734840829575169>) need to send you an announcement. Here it is! **\n${args.join(' ')}\n\n**This message was sent to *${guild.name}* on purpose from the creator.**\n*Please be aware that this announcement system will not be spammed.*`)
+    .setFooter(`An official announcement from Wolfy (<@276040277293268992>) and FHGDev. (<@242734840829575169>)`, bot.user.avatarURL)
     .setTimestamp();
 
   if (sendChannel !== "") {
@@ -40,8 +40,8 @@ module.exports.run = (bot, message, args) => {
   let announceTest = new discord.RichEmbed()
     .setColor("7289DA")
     .setAuthor(`Test Announcement`, bot.user.avatarURL)
-    .setDescription(`**Hello FHGDev here, just sending an announcement...**\n${args.join(' ')}\n\n**This message was sent to *${message.guild.name}* on purpose from the creator.**\n*This announcement system wil also not be spammed alot.*`)
-    .setFooter(`Test Example reply with yes to send to every server!`)
+    .setDescription(`**Hello Wolfy and FHGDev here, just sending an announcement...**\n${args.join(' ')}\n\n**This message was sent to *${message.guild.name}* on purpose from the creator.**\n*Please be aware that this announcement system will not be spammed.*`)
+    .setFooter(`Test Example; reply with yes to send to every server!`)
     .setTimestamp();
 
   message.channel.send({ embed: announceTest })
@@ -53,7 +53,7 @@ module.exports.run = (bot, message, args) => {
         }).then((collected) => {
           m.delete();
           collected.first().delete();
-          message.channel.send(`Now sending an announcement to every guild im in! [${bot.guilds.array().length} guilds]`).then(m => m.delete(10000));
+          message.channel.send(`Now sending an announcement to every guild I'm in! [${bot.guilds.array().length} guilds]`).then(m => m.delete(10000));
           bot.guilds.forEach((guild, id) => {
             sendAnnounce(bot, message, args, guild);
           });
