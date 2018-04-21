@@ -6,6 +6,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setColor("BLACK")
   message.channel.send({embed: em})
   setTimeout(() => {
+    bot.destroy();
     process.exit(143)
   }, 5000)
 }
