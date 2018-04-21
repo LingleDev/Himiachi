@@ -19,3 +19,7 @@ module.exports.run = (bot, message, args, discord) => {
     bot.users.get('276040277293268992').send({embed: em})
     bot.users.get('242734840829575169').send({embed: em})
 }
+
+module.exports.help = {
+    name: "contact"
+}
