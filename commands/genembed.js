@@ -7,6 +7,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setThumbnail(message.author.avatarURL())
   .setColor("PURPLE")
   .setFooter(`${message.author.username}'s generated embed.`)
+  message.delete(500)
   message.channel.send({embed: em})
 }
 
