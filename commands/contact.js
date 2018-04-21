@@ -17,4 +17,5 @@ module.exports.run = (bot, message, args, discord) => {
     .setThumbnail(bot.user.avatarURL)
     message.channel.send({embed: emb})
     bot.users.get('276040277293268992').send({embed: em})
+    bot.users.get('242734840829575169').send({embed: em})
 }
