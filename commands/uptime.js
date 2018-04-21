@@ -10,6 +10,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setTitle(`Himiachi Uptime`)
   .setDescription(`Serving ${bot.guilds.size} guilds, ${bot.channels.size} channels, and ${bot.users.size} users for ${msgArray}.`)
   .setTimestamp()
+  .setColor("BLUE")
   .setFooter(`Himiachi Uptime`)
   message.channel.send({embed: em})
 }
