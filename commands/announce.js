@@ -4,7 +4,7 @@ const config = require(`../config.json`);
 
 function sendAnnounce(bot, message, args, guild) {
   var sendChannel = "";
-  if (config.donotAnnounce.includes(guild.id)) return message.channel.send(`${guild.name} has no channel, canceling...`)
+  if (config.donotAnnounce.includes(guild.id)) return message.channel.send(`${guild.name} is on blacklist, canceling...`)
   
   if (guild.channels.find("name", "general")) {
     sendChannel = guild.channels.find("name", "general");
