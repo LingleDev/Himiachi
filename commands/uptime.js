@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args, discord) => {
   if (hrs == "0 hour(s),") hrs = ""
   if (mins == " 0 minute(s), ") mins = ""
   msgArray.push(hrs + mins + sec)
-  let embed = new discord.RichEmbed()
+  let em = new discord.RichEmbed()
   .setTitle(`Himiachi Uptime`)
   .setDescription(`Serving ${bot.guilds.size} guilds, ${bot.channels.size} channels, and ${bot.users.size} users for ${msgArray}.`)
   .setTimestamp()
