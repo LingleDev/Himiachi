@@ -5,11 +5,20 @@ let em = new discord.RichEmbed()
 .setThumbnail(bot.user.avatarURL)
 .setTimestamp()
 .setColor("GOLD")
+let embed = new discord.RichEmbed()
+.setTitle("Himiachi Restarted!")
+.setDescription(":thumbsup: Himiachi Successfully Restarted.")
+.setThumbnail(bot.user.avatarURL)
+.setTimestamp()
+.setColor("GOLD")
 
   function restart(channel) {
     channel.send({embed: em})
     .then(() => bot.destroy())
-    .then(() => bot.login(process.env.token))
+    .then(() => bot.login(process.env.token)).catch(err => {
+      console.error(err)
+    })
+    .then(() => message.channel.send({embed: embed})
   }
   
   restart(message.channel)
