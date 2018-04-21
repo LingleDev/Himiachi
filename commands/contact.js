@@ -2,7 +2,7 @@ module.exports.run = (bot, message, args, discord) => {
     var mes = args.join(' ')
     let em = new discord.RichEmbed()
     .setTitle(`Contact System`)
-    .setDescription(mes)
+    .setDescription(`\n${mes}`)
     .setColor(`BLUE`)
     .setFooter(`This message was sent by ${message.author.tag}`)
     .setTimestamp()
