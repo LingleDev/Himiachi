@@ -3,7 +3,7 @@ let offon = "on"
 
 module.exports.run = (bot, message, args, discord) => {
   let toggle = args
-  if (toggle == "on) {
+  if (toggle == "on") {
     config.rotator = "yes"
     offon = "on"
   }
