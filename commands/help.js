@@ -4,7 +4,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setDescription("This menu is a list of commands you can use with Himiachi.")
   .addField("Command Context", "Help")
   .addField("Bot Details", "Ping")
-  .setColor("BLUE")
+  .setColor("GREEN")
   .setThumbnail(bot.user.avatarURL)
   .setFooter(message.author.username)
   .setTimestamp()
