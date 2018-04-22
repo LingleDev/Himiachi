@@ -22,7 +22,24 @@ require('fs').readdir("./commands/", (err, files) => {
 bot.on('ready', () => {
   bot.user.setActivity(`for .help | ${bot.guilds.size} servers`, {type: "WATCHING"})
   console.log("Himiachi ready!")
- // require('./util/rotator.js')(bot)
+ // ==Rotator==
+  var statuses = ["over Himiachi Base", "bot moosic", "bot gamez"]
+  var result = statuses[Math.floor(Math.random() * statuses.length)]
+  if (config.rotator == "yes") {
+  setInterval(() => {
+    if (result == statuses[0]) {
+      bot.user.setActivity(result, {type: "WATCHING"})
+    }
+   
+   if (result == statuses[1]) {
+    bot.user.setActivity(result, {type: "LISTENING"})
+   }
+   
+   if (result == statuses[2]) {
+    bot.user.setActivity(result, {type: "PLAYING"})
+   }
+  }, 25000)
+  } else return;
 })
 
 bot.on('message', message => {
