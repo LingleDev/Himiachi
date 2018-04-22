@@ -3,15 +3,19 @@ const config = require('../config.json')
  
 module.exports = (bot) => {
   var result = statuses[Math.floor(Math.random() * statuses.length)]
-  if (config.rotator == "yes") {
   setInterval(() => {
     if (result == statuses[0]) {
       bot.user.setActivity(result, {type: "WATCHING"})
     }
+   
+   if (result == statuses[1]) {
+    bot.user.setActivity(result, {type: "LISTENING"})
+   }
+   
+   if (result == statuses[2]) {
+    bot.user.setActivity(result, {type: "PLAYING"})
+   }
   }, 25000)
-  } else {
-    return;
-  }
 }
 
 module.exports = statuses
