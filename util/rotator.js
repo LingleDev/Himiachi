@@ -1,7 +1,7 @@
 const config = require('../config.json')
-
+ var statuses = ["over Himiachi Base", "bot moosic", "bot gamez"]
+ 
 module.exports = (bot) => {
-  var statuses = ["over Himiachi Base", "bot moosic", "bot gamez"]
   var result = statuses[Math.floor(Math.random() * statuses.length)]
   if (config.rotator == "yes") {
   setInterval(() => {
