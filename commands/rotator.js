@@ -7,7 +7,7 @@ module.exports.run = (bot, message, args, discord) => {
     config.rotator = "yes"
     offon = "on"
   }
-  if (toggle == "no") {
+  if (toggle == "off") {
     config.rotator = "no"
     offon = "off"
   }
