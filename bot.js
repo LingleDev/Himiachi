@@ -23,7 +23,7 @@ bot.on('ready', () => {
   bot.user.setActivity(`for .help | ${bot.guilds.size} servers`, {type: "WATCHING"})
   console.log("Himiachi ready!")
   if (config.rotator == "yes") {
-    require('./util/rotator.js')
+    require('./util/rotator.js')(bot)
   }
 })
 
