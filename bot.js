@@ -22,7 +22,7 @@ require('fs').readdir("./commands/", (err, files) => {
 bot.on('ready', () => {
   bot.user.setActivity(`for .help | ${bot.guilds.size} servers`, {type: "WATCHING"})
   console.log("Himiachi ready!")
-    require('./util/rotator.js')(bot)
+  require('./util/rotator.js')(bot)
 })
 
 bot.on('message', message => {
