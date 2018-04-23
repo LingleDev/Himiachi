@@ -1,9 +1,7 @@
 module.exports.run = (bot, message, args, discord) => {
   let em = new discord.RichEmbed()
   .setTitle("Himiachi Support Server")
-  .setDescription("An invite to Himiachi's Support Server!")
-  .addField("Invite")
-  .addField("https://discord.gg/Qf8Tskq")
+  .setDescription("Click [here](https://discord.gg/Qf8Tskq) to join my support server.")
   .setColor("GREEN")
   .setThumbnail(bot.user.avatarURL)
   .setFooter(message.author.username)
@@ -14,3 +12,4 @@ module.exports.run = (bot, message, args, discord) => {
 
 module.exports.help = {
   name: "support"
+}
