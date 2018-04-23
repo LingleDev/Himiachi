@@ -5,6 +5,7 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "^11.3.1"
+    "discord.js": "^11.3.1",
+    "snekfetch": "^3.6.4"
   }
 }
