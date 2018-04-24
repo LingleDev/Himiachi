@@ -9,10 +9,12 @@ if (config.ownerids.includes(message.author.id)) {
     .setTimestamp()
     .setThumbnail(bot.user.avatarURL)
     .setColor("BLUE")
-      message.channel.send({embed: embed})
+      message.channel.send({embed: embed}))
     } else {
-      let em = new discord.RichEmbed()
       let [game, type] = args
+      let em = new discord.RichEmbed()
+      .setTitle("Activity Changer")
+      .setDescription(`Okay, I changed my activity to ${type.toLowerCase()} ${game.toLowerCase()}`)
       bot.user.setActivity(game, {type: type})
       message.channel.send({embed: em})
     }
