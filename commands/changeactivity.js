@@ -9,7 +9,7 @@ if (config.ownerids.includes(message.author.id)) {
     .setTimestamp()
     .setThumbnail(bot.user.avatarURL)
     .setColor("BLUE")
-      message.channel.send({embed: embed}))
+      message.channel.send({embed: embed})
     } else {
       let [game, type] = args
       let em = new discord.RichEmbed()
