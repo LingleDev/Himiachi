@@ -14,7 +14,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setFooter(message.author.username)
   .setTimestamp()
   
-  message.channel.send({embed: em}).then(m => m.delete(10000))
+  message.channel.send({embed: em})
 }
 
 module.exports.help = {
