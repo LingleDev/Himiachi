@@ -29,7 +29,7 @@ bot.on('ready', () => {
   if (config.rotator == "yes") {
   setInterval(() => {
     if (result == statuses[0]) {
-      bot.user.setActivity(result, {type: "WATCHING"})
+      bot.user.setActivity(result, {type: "WATCHING", url: "https://twitch.tv/xxwolfbaneyt"})
     }
    
    if (result == statuses[1]) {
