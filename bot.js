@@ -22,11 +22,10 @@ require('fs').readdir("./commands/", (err, files) => {
 bot.on('guildMemberAdd', (member) => require('./events/guildMemberAdd.js')(bot, member))
 
 bot.on('ready', () => {
-  bot.user.setActivity(`for .help | ${bot.guilds.size} servers`, {type: "WATCHING"})
-  console.log("Himiachi ready!")
- // ==Rotator==
   var statuses = ["over Himiachi Base", "bot moosic", "bot gamez"]
   var result = statuses[Math.floor(Math.random() * statuses.length)]
+  bot.user.setActivity(`Loading Himiachi...`, {type: "STREAMING"})
+  setTimeout(() => {
   if (config.rotator == "yes") {
   setInterval(() => {
     if (result == statuses[0]) {
@@ -43,6 +42,9 @@ bot.on('ready', () => {
   }, 25000)
   } else return;
 })
+}, 10000)
+  console.log("Himiachi ready!")
+ // ==Rotator==
 
 bot.on('message', message => {
   let mArray = message.content.split(" ")
