@@ -5,6 +5,8 @@ module.exports.run = (bot, message, args, discord) => {
   .setTimestamp()
   .setColor(`RANDOM`)
   .setFooter("Himiachi Website!")
+  
+  message.channel.send({embed: em})
 }
 
 module.exports.help = {
