@@ -11,6 +11,7 @@ module.exports.run = (bot, message, args, discord) => {
   .setTimestamp()
   .setColor("RANDOM")
   .setFooter(`Added ${user.username} to the userblacklist.`)
+  message.channel.send({embed: em})
   
   }).catch(err => {
     console.error(err)
