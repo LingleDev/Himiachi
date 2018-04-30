@@ -1,4 +1,5 @@
-module.exports.run = (bot, message, args, discord) => {   
+module.exports.run = (bot, message, args, discord) => {
+    if (!message.member.hasPermission(["BAN_MEMBERS"])) return;
     let member = message.mentions.members.first();
     let reason = args.slice(1).join(' ');
     if (!args) {
