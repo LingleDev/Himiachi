@@ -1,11 +1,20 @@
 module.exports.run = (bot, message, args, discord) => {
     if (!message.member.hasPermission(["BAN_MEMBERS"])) return;
     let member = message.mentions.members.first();
+    if (!member) return message.channel.send("You need to mention someone to ban.")
     let reason = args.slice(1).join(' ');
-    if (!args) {
-        member.ban().then(message.channel.send(`Okay, just banned ${member.displayName}.`))
+    if (!reason) {
+        if (member.displayName) {
+            member.ban().then(message.channel.send(`Okay, just banned ${member.displayName}.`))
+        } else {
+            member.ban().then(message.channel.send(`Okay, just banned ${member.user.username}.`))
+        }
     } else {
-        member.ban(reason).then(message.channel.send(`Okay, just banned ${member.displayName}.`))
+        if (member.displayName) {
+            member.ban(reason).then(message.channel.send(`Okay, just banned ${member.displayName}.`))
+        } else {
+            member.ban(reason).then(message.channel.send(`Okay, just banned ${member.user.username}.`))
+        }
     }
 }
 
