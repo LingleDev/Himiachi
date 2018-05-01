@@ -1,6 +1,6 @@
 module.exports.run = (bot, message, args, discord) => {
   let id = args.join(' ');
-  if (message.member.hasPermission(["BAN_MEMBERS"]) return;
+  if (!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send("You don't have permission to ban people. If there's someone who needs to be banned, contact an administrator or a moderator.")
     bot.fetchUser(id).then(user => {
       message.guild.ban(id).catch(err => {
         message.channel.send("Failed to ban user "+id)
