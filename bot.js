@@ -24,12 +24,12 @@ bot.on('guildMemberAdd', (member) => require('./events/guildMemberAdd.js')(bot, 
 bot.on('ready', () => {
   var statuses = ["over Himiachi Base", "bot moosic", "bot gamez"]
   var result = statuses[Math.floor(Math.random() * statuses.length)]
-  bot.user.setActivity(`Loading Himiachi...`, {type: "STREAMING"})
+  bot.user.setActivity(`Loading Himiachi...`, {type: "STREAMING", url: "https://twitch.tv/xxwolfbaneyt"})
   setTimeout(() => {
   if (config.rotator == "yes") {
   setInterval(() => {
     if (result == statuses[0]) {
-      bot.user.setActivity(result, {type: "WATCHING", url: "https://twitch.tv/xxwolfbaneyt"})
+      bot.user.setActivity(result, {type: "WATCHING"})
     }
    
    if (result == statuses[1]) {
