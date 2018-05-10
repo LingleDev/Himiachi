@@ -1,4 +1,6 @@
-module.exports.run = (bot, message, args, discord) => {
+const discord = require('discord.js')
+
+module.exports.run = (bot, message, args) => {
   require('snekfetch').get('https://meme-api.explosivenight.us/v1/random/?type=json')
   .then(response => {
     let em = new discord.RichEmbed()
