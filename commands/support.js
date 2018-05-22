@@ -1,7 +1,7 @@
 module.exports.run = (bot, message, args, discord) => {
   let em = new discord.RichEmbed()
   .setTitle("Himiachi Support Server")
-  .setDescription("Click [here](https://discord.gg/Qf8Tskq) to join my support server.")
+  .setDescription("Click [here](https://discord.gg/7dD9YK) to join my support server.")
   .setColor("GREEN")
   .setThumbnail(bot.user.avatarURL)
   .setFooter(message.author.username)
