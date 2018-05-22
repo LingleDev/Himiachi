@@ -24,9 +24,8 @@ bot.on('guildMemberAdd', (member) => require('./events/guildMemberAdd.js')(bot, 
 bot.on('ready', () => {
   var statuses = ["over Himiachi Base", "bot moosic", "bot gamez"]
   var result = statuses[Math.floor(Math.random() * statuses.length)]
-  bot.user.setActivity(`Loading Himiachi...`, {type: "STREAMING", url: "https://twitch.tv/xxwolfbaneyt"})
+  bot.user.setActivity(`Loading Himiachi...`, {type: "STREAMING", url: "https://twitch.tv/freakinghulk"})
   setTimeout(() => {
-  if (config.rotator == "yes") {
   setInterval(() => {
     if (result == statuses[0]) {
       bot.user.setActivity(result, {type: "WATCHING"})
@@ -40,7 +39,6 @@ bot.on('ready', () => {
     bot.user.setActivity(result, {type: "PLAYING"})
    }
   }, 25000)
-  } else return;
 })
 }, 10000)
   console.log("Himiachi ready!")
