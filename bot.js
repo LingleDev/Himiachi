@@ -26,22 +26,22 @@ bot.on('ready', () => {
   var result = statuses[Math.floor(Math.random() * statuses.length)]
   bot.user.setActivity(`Loading Himiachi...`, {type: "STREAMING", url: "https://twitch.tv/freakinghulk"})
   setTimeout(() => {
-  setInterval(() => {
-    if (result == statuses[0]) {
-      bot.user.setActivity(result, {type: "WATCHING"})
-    }
+    setInterval(() => {
+      if (result == statuses[0]) {
+        bot.user.setActivity(result, {type: "WATCHING"})
+      }
    
-   if (result == statuses[1]) {
-    bot.user.setActivity(result, {type: "LISTENING"})
-   }
+      if (result == statuses[1]) {
+        bot.user.setActivity(result, {type: "LISTENING"})
+      }
    
-   if (result == statuses[2]) {
-    bot.user.setActivity(result, {type: "PLAYING"})
-   }
-  }, 25000)
+      if (result == statuses[2]) {
+        bot.user.setActivity(result, {type: "PLAYING"})
+      }
+    }, 25000)
+  }, 10000)
+    console.log("Himiachi ready!")
 })
-}, 10000)
-  console.log("Himiachi ready!")
  // ==Rotator==
 
 bot.on('message', message => {
