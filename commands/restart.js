@@ -1,16 +1,19 @@
+const config = require('../config.json')
+
 module.exports.run = (bot, message, args, discord) => {
-let em = new discord.RichEmbed()
-.setTitle("Himiachi Restarting...")
-.setDescription(":wave: Restarting...")
-.setThumbnail(bot.user.avatarURL)
-.setTimestamp()
-.setColor("GOLD")
-let embed = new discord.RichEmbed()
-.setTitle("Himiachi Restarted!")
-.setDescription(":thumbsup: Himiachi Successfully Restarted.")
-.setThumbnail(bot.user.avatarURL)
-.setTimestamp()
-.setColor("GOLD")
+  let em = new discord.RichEmbed()
+  .setTitle("Himiachi Restarting...")
+  .setDescription(":wave: Restarting...")
+  .setThumbnail(bot.user.avatarURL)
+  .setTimestamp()
+  .setColor("GOLD")
+  
+  let embed = new discord.RichEmbed()
+  .setTitle("Himiachi Restarted!")
+  .setDescription(":thumbsup: Himiachi Successfully Restarted.")
+  .setThumbnail(bot.user.avatarURL)
+  .setTimestamp()
+  .setColor("GOLD")
 
   function restart(channel) {
     channel.send({embed: em})
@@ -20,8 +23,11 @@ let embed = new discord.RichEmbed()
     .catch(err => console.error(err))
     .then(() => message.channel.send({embed: embed}))
   }
-  
-  restart(message.channel)
+  if (config.owners.includes(message.author.id)) {
+    restart(message.channel)
+  } else {
+    message.channel.send("Owner only, you cannot use this command.")
+  }
 }
 
 module.exports.help = {
