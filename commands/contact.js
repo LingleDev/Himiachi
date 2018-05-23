@@ -11,13 +11,13 @@ module.exports.run = (bot, message, args, discord) => {
     
     let emb = new discord.RichEmbed()
     .setTitle(`Contact System`)
-    .setDescription(`Now contacting Wolfy and FHGDev...`)
+    .setDescription(`Now contacting FHGDev...`)
     .setColor(`BLUE`)
     .setFooter(`Contact System`)
     .setTimestamp()
     .setThumbnail(bot.user.avatarURL)
+    
     message.channel.send({embed: emb})
-    bot.users.get('276040277293268992').send({embed: em})
     bot.users.get('242734840829575169').send({embed: em})
 }
 
