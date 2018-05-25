@@ -2,7 +2,7 @@ module.exports.run = (bot, message, args, discord) => {
  let em = new discord.RichEmbed()
  .setTitle("Our Studio!")
  .setDescription("Welp this is our studio!)
- .setDescription("Heres the invite! https://discord.gg/Ch5HEjj")
+ .addField("Here's an invite!", `https://discord.gg/Ch5HEjj`)
  .setFooter(message.author.username)
  .setTimestamp()
  
