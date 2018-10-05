@@ -1,5 +1,5 @@
-const discord = require('discord.js'),
-const money = require('./money/database.json'),
+const discord = require('discord.js');
+const money = require('./money/database.json');
 bot = new discord.Client(),
 config = require('./config.json'),
 prefix = ".",
