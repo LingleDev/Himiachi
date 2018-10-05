@@ -61,7 +61,7 @@ bot.on('message', message => {
   }
 })
 
-client.on('message', message => {
+bot.on('message', message => {
  
         // Prefix
         let prefix = '!';
