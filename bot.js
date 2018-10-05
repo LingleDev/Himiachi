@@ -67,7 +67,7 @@ let BaseAmt = Math.floor(Math.random() * 1) + 1;
    money[message.author.id] = {
     money: money[message.author.id].money + MonAmt
    } 
-   fs.writefile('./money/database.json' JSON.stringify(money), (err) => {
+   fs.writefile('./money/database.json', JSON.stringify(money), (err) => {
    if (err) console.log(err)
    })
   }
