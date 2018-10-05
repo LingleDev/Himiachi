@@ -1,5 +1,5 @@
 const discord = require('discord.js'),
-const money = require('discord-money')
+let money = require('./money/database.json')
 bot = new discord.Client(),
 config = require('./config.json'),
 prefix = ".",
@@ -53,6 +53,25 @@ bot.on('message', message => {
   if (message.channel.type == "dm") return;
   if (!message.content.startsWith(prefix)) return;
   
+  
+if(!money[message.author.id]){
+  money[message.author.id] = {
+    money: 0
+  };
+}
+
+let MonAmt = Math.floor(Math.random() * 1) + 1;
+let BaseAmt = Math.floor(Math.random() * 1) + 1;
+  console.log(`${MonAmt} ; ${BaseAmt}`)
+  if(MonAmt === BaseAmt){
+   money[message.author.id] = {
+    money: money[message.author.id].money + MonAmt
+   } 
+   fs.writefile('./money/database.json' JSON.stringify(money), (err) => {
+   if (err) console.log(err)
+   })
+  }
+  
   if (cmd) {
     if (config.ubl.includes(message.author.id)) return;
     cmd.run(bot, message, args, discord)
@@ -60,4 +79,5 @@ bot.on('message', message => {
     baselogger(bot, `**Command Run**\n\n**Command:** ${message.content.split(" ")[0]}\n**User:** ${message.author.tag}\n**Message:** ${message.content}\n**Guild:** ${message.guild.name}\n**Channel:** ${message.channel.name}`);
   }
 })
+
 
