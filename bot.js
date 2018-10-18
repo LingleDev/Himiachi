@@ -3,8 +3,9 @@ const money = require('./money/database.json');
 bot = new discord.Client(),
 config = require('./config.json'),
 prefix = ".",
-{baselogger} = require('./logger.js')
-bot.login(process.env.token);
+{baselogger} = require('./logger.js'),
+fs = require('fs')
+bot.login(process.env.token)
 
 // ===Loading commands===
 
