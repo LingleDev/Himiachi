@@ -2,15 +2,11 @@ const {baselogger} = require('../logger.js')
 
 module.exports = (bot, member) => {
   let guild = member.guild
-  let channnel = guild.channels.find('name', 'welcome')
+  let channnel = guild.channels.find(c => c.name == 'welcome')
   
   if (!channel) {
     return;
   } else {
-    if (member.displayName) {
-      channel.send(`Welcome to ${guild.name}, ${member.displayName}!`)
-    } else {
-      channel.send(`Welcome to ${guild.name}, ${member.user.username}!`)
-    }
+    channel.send(`${member.displayName || message.author.username} just joined ${guild.name}.`)
   }
 }
